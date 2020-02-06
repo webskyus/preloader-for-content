@@ -1,0 +1,94 @@
+body {
+	background: #f4f4f4;
+	margin: 0;
+	padding: 0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+	color: #333;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.card-box {
+	max-width: 300px;
+	margin: 0 auto;
+	margin-top: 200px;
+	border-radius: 3px;
+	box-shadow: 0 20px 60px 0 rgba(0,0,0,0.1);
+	transition: all 0.8s;
+}
+.card-box:hover {
+	box-shadow: 0 10px 70px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-box__img-wrap {
+	overflow: hidden;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.card-box__img-wrap img {
+	width: 100%;
+	height: 180px;
+}
+.card-box__text-wrap {
+	padding: 20px;
+	padding-bottom: 10px;
+	overflow: hidden;
+	border-radius: 8px;
+}
+.card-box__text {
+	font-size: 14px;
+	transition: all 0.8s;
+}
+.card-box__title {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	transition: all 0.8s;
+}
+.card-box:hover .card-box__title {
+	color: rgb(24, 102, 155);
+}
+.card-box:hover .card-box__text {
+	color: rgb(11, 89, 141);
+}
+
+.container-overlay {
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	transition: all 0.8s;
+}
+
+.container-overlay:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(231, 230, 230);
+	transition: all 0.2s;
+}
+.container-overlay:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0; 
+	z-index: 2;
+	width: 40%;
+	height: 100%;
+	transform: translateX(-100%);
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .15), transparent);
+	transition: all 1s;
+	animation: loadingAnim 1s infinite;
+}
+
+@keyframes loadingAnim {
+	100% {
+		transform: translateX(300%);
+	}
+}
